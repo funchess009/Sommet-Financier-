@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouvrir un Compte - Sommet Financier</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Formulaire en pleine page */
+        #account-opening {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Hauteur de l'écran complet */
+            background-color: #f4f4f4;
+        }
+
+        #account-opening .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #account-opening h2 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        #account-opening form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #account-opening label {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        #account-opening input {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #account-opening .cta-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #account-opening .cta-button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <a id="headerTitle" href="#home">
+                <img src="images/logo.png" alt="Logo Sommet Financier" class="logo">
+                <h1>Ouvrir un Compte</h1>
+            </a>
+        </div>
+    </header>
+
+    <!-- Formulaire d'ouverture de compte -->
+    <section id="account-opening">
+        <div class="container">
+            <h2>Créer un Nouveau Compte</h2>
+            <p>Veuillez remplir le formulaire ci-dessous pour ouvrir un compte.</p>
+            <form action="send_email.php" method="post">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+
+                <label for="date-naissance">Date de Naissance :</label>
+                <input type="date" id="date-naissance" name="date-naissance" required>
+
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" required>
+
+                <label for="telephone">Numéro de Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Mot de Passe :</label>
+                <input type="password" id="password" name="password" minlength="8" required>
+
+                <label for="confirm-password">Confirmez le Mot de Passe :</label>
+                <input type="password" id="confirm-password" name="confirm-password" minlength="8" required>
+
+                <button type="submit" class="cta-button">Soumettre</button>
+            </form>
+            <p id="confirmation" style="display: none;">Votre demande a été envoyée avec succès !</p>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sommet Financier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script de confirmation
+        document.querySelector('form').onsubmit = function () {
+            document.getElementById('confirmation').style.display = 'block';
+            return false; // Empêche l'envoi réel pour démonstration
+        };
+    </script>
+</body>
+
+</html>
