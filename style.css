@@ -116,27 +116,12 @@ header .container {
     transition: font-size 0.3s ease, padding 0.3s ease;
 }
 
-/* Hero section */
-.hero {
-    background: #f4f4f4;
-    padding: 60px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
-}
-.hero img {
-    width: 40%;
-    height: auto;
-    border-radius: 100%;
-}
-.hero p {
-    margin-bottom: 20px;
-}
 
 /* Section boni */
+#knowMore a, #loginFormSmall a{
+    color: white;
+    text-decoration: none;
+}
 
 #student-bonus img {
     position: absolute;
@@ -173,6 +158,11 @@ header .container {
     color: white;
     border-radius: 5px;
     margin: 20px
+}
+
+#knowMore:hover {
+    background-color: #004c99;
+    cursor: pointer;
 }
 
 #offerTagContainer{
@@ -241,6 +231,10 @@ h2{
     font-size: medium;
 }
 
+#bonusText form button:hover {
+    background-color: #004c99;
+    cursor: pointer;
+}
 
 /* Services */
 #services {
